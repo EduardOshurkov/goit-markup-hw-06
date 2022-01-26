@@ -850,6 +850,7 @@ h3 {
 }
 
 .modal {
+  box-sizing: border-box;
   width: 528px;
   min-height: 581px;
   background-color: #ffffff;
@@ -858,8 +859,9 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 40px;
+  padding-bottom: 40px;
 }
 
 .modal-close {
@@ -874,6 +876,10 @@ h3 {
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+.modal-close:hover {
+  fill: var(--accent-color);
 }
 
 .is-hidden {
@@ -1000,7 +1006,7 @@ h3 {
 }
 
 .form-btn {
-  position: absolute;
+  position: relative;
   margin-top: 30px;
   left: 50%;
   transform: translateX(-50%);
